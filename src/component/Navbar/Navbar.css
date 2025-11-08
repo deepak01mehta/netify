@@ -1,11 +1,78 @@
-.navbar{
-    width: 100%;
-    padding: 20px 6%;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    font-size: 14px;
-    color: #e5e5e5;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 2%;
+  font-size: 14px;
+  z-index: 1;
+}
 
-    z-index: 1;
+.navbar-left {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+.navbar .search-icon {
+  cursor: pointer;
+}
+.navbar .bell-icon {
+  cursor: pointer;
+}
+
+.navbar .gift-icon {
+  cursor: pointer;
+}
+
+.navbar .user-icon {
+  cursor: pointer;
+}
+.logo {
+  height: 90px;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  font-size: 1.1rem;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 25px;
+  font-size: 1.1rem;
+  align-items: center;
+}
+.navbar-profile{
+    
+    
+    
+    cursor: pointer;
+    position: relative;
+}
+.navbar .dropdown{
+position: absolute;
+top: 100%;
+right: 0;
+width: max-content;
+background-color: #191919;
+padding: 18px 22px;
+border-radius: 20px;
+text-decoration: underline;
+z-index: 1;
+display: none;
+
+}
+.navbar .dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.navbar-profile:hover .dropdown{
+    display: block;
+
 }
