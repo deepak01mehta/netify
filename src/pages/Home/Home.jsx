@@ -1,20 +1,41 @@
 import React from 'react'
 import './Home.css'
 import Navbar from '../../component/Navbar/Navbar.jsx'
+import hero_banner from '../../assets/hero_banner.jpg'
+import title from '../../assets/title.png'
+import play_icon from '../../assets/play_icon.png'
+import info_icon from'../../assets/info_icon.png'
+import { TitleCards } from '../../component/Navbar/TitleCards/TitleCards.jsx'
+import { Footer } from '../../component/Navbar/Footer/Footer.jsx'
+
+
 
 function Home() {
   return (
     <div className='home'>
        <Navbar /> 
        <div className="hero">
-        <img  className='banner-img' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f562aaf4-5dbb-4603-a32b-6ef6c2230136/dh0w8qv-9d8ee6b2-b41a-4681-ab9b-8a227560dc75.jpg/v1/fill/w_1192,h_670,q_70,strp/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6Ii9mL2Y1NjJhYWY0LTVkYmItNDYwMy1hMzJiLTZlZjZjMjIzMDEzNi9kaDB3OHF2LTlkOGVlNmIyLWI0MWEtNDY4MS1hYjliLThhMjI3NTYwZGM3NS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.FScrpAAFnKqBVKwe2syeiOww6mfH6avq-DRHZ_uFVNw" alt="" />
+        <img  className='banner-img' src={hero_banner } alt="" />
         <div className="hero-caption">
-          <img src="" alt="" className='caption-img'/>
+          <img src={title} alt="" className='caption-img'/>
           <p>Discovring his ties to a secret ancient order ,a young man living
             in modern Istanbul embarks on a quest to save the city form an immotal enemy
           </p>
+          <div className="hero-btns">
+            <button className='btn'><img src={play_icon} alt="" />Play</button>
+            <button className='btn dark-btn'><img src={info_icon} alt="" />More Info</button>
+
+          </div>
+          <TitleCards />
         </div>
        </div>
+       <div className="more-card">
+        <TitleCards title={"Blockbuster Movies "} />
+        <TitleCards  title={"Only on Netify"}/>
+        <TitleCards title={"Upcoming"} />
+        <TitleCards title={"Top Pics for You"} />
+       </div>
+       <Footer />
     </div>
   )
 }
