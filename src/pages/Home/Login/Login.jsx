@@ -8,7 +8,7 @@ const Login = () => {
       <div className="login-form">
         <h1>Sign UP</h1>
         <form >
-             <input type="text" placeholder='Your name' />
+             <input type="text" placeholder='Your Name' />
              <input type="email" placeholder='Your Email' />
              <input type="password" placeholder='Password' />
              <button>Sign Up</button>
