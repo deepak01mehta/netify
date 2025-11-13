@@ -30,10 +30,10 @@ function Home() {
         </div>
        </div>
        <div className="more-card">
-        <TitleCards title={"Blockbuster Movies "} />
-        <TitleCards  title={"Only on Netify"}/>
-        <TitleCards title={"Upcoming"} />
-        <TitleCards title={"Top Pics for You"} />
+        <TitleCards title={"Blockbuster Movies "} category={"top_rated"} />
+        <TitleCards  title={"Only on Netify"} category={"popular"} />
+        <TitleCards title={"Upcoming"} category={"upcoming"} />
+        <TitleCards title={"Top Pics for You"}category={"now_playing"} />
        </div>
        <Footer />
     </div>

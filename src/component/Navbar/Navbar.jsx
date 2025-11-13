@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Navbar.css'
 import logo from '../../assets/netifylogo.png'
 
@@ -12,8 +12,27 @@ import { Search ,Bell, User, Gift } from "lucide-react";
 
 
 const Navbar = () => {
+
+const navRef =useRef();
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY >= 80) {
+      navRef.current.classList.add("nav-dark");
+    } else {
+      navRef.current.classList.remove("nav-dark");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
+
   return (
-    <div className='navbar'>
+    <div ref={navRef} className='navbar'>
       <div className="navbar-left">
        <img src={logo} alt="" className='logo' />
        <ul>

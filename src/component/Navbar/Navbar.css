@@ -1,10 +1,15 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 2%;
+  padding: 0px 1%;
   font-size: 14px;
-  z-index: 1;
+  z-index: 1000;
 }
+
+
 
 .navbar-left {
   display: flex;
@@ -13,6 +18,7 @@
   gap: 50px;
   align-items: center;
 }
+
 .navbar .search-icon {
   cursor: pointer;
 }
@@ -41,6 +47,10 @@ ul {
   cursor: pointer;
 }
 
+.navbar-left ul li:hover {
+  color: #e50914; 
+}
+
 .navbar-right {
   display: flex;
   gap: 25px;
@@ -59,7 +69,7 @@ position: absolute;
 top: 100%;
 right: 0;
 width: max-content;
-background-color: #191919;
+
 padding: 18px 22px;
 border-radius: 20px;
 text-decoration: underline;
@@ -74,5 +84,11 @@ display: none;
 
 .navbar-profile:hover .dropdown{
     display: block;
+
+}
+.nav-dark{
+
+  background-color: black;
+  transition: background-color 0.3s ease;
 
 }
