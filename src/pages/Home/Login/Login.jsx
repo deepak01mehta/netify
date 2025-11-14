@@ -2,10 +2,36 @@ import React, { useState } from "react";
 import "./Login.css";
 import netifylogo from "../../../assets/netifylogo.png";
 
+import {login,signup} from '../../../firebase'
+
 const Login = () => {
   const [sign, setSign] = useState("Sign In");
 
+  const [name,setName] =useState("");
+  const [email,setEmail] =useState("");
+
+  const [password,setPassword] =useState("");
+  const [loading,setLaoding]= useState(false)
+
+
+  const user_auth =async(event)=>{
+   
+    event.preventDefault();
+     setLaoding(true);
+    if(sign==="Sign In"){
+      await login(email,password)
+    }
+    else{
+      await signup(name,email,password)
+    }
+      setLaoding(false);
+  }
+
+ 
+
+
   return (
+    
     <div className="login">
       <img src={netifylogo} alt="Netify Logo" className="login-logo" />
 
@@ -13,11 +39,12 @@ const Login = () => {
         <h1>{sign}</h1>
 
         <form>
-          {sign === "Sign Up" && <input type="text" placeholder="Your Name" />}
+          {sign === "Sign Up" && 
+          <input value={name} onChange={(e)=>setName(e.target.value)} type="text" placeholder="Your Name" />}
 
-          <input type="email" placeholder="Your Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit">{sign}</button>
+          <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Your Email" />
+          <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
+          <button type="submit" onClick={user_auth} disabled={loading}  >{loading?"Loading...":"Sign In"}</button>
 
           <div className="form-help">
             <div className="remember">

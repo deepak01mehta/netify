@@ -5,6 +5,7 @@ import logo from '../../assets/netifylogo.png'
 
 
 import { Search ,Bell, User, Gift } from "lucide-react";
+import { logout } from '../../firebase';
 
 
 
@@ -54,7 +55,7 @@ useEffect(() => {
 
             <User className='user-icon' />
             <div className='dropdown'>
-              <p>Sign out</p>
+              <p onClick={()=>{logout()}}>Sign out</p>
             </div>
          
           
