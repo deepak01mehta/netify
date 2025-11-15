@@ -97,8 +97,29 @@ display: none;
   .navbar{
     padding: 20px 4%;
   }
-  .navbar-left ul{
+  .navbar-left ul li{
     display: none;
 
   }
+  .navbar img {
+    height: 25px;
+  }
+  .navbar .logo{
+    height: 100px;
+  }
+}
+
+@media (max-width:500px) {
+  .navbar img{
+    height: 20px;
+
+  }
+  .navbar-right{
+    gap: 10px;
+  }
+
+  .navbar .logo{
+ height: 25px;
+  }
+  
 }
